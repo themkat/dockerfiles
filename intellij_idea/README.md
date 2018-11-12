@@ -10,4 +10,4 @@ The name themkat/idea is simply a name I selected while building. If you build t
 
 The option `--name myidea` is simply to create a name for the container. That way you can restart it with the same file system and settings once you are done.
 
-You may want to create a shared volume to use your workspace inside the container.
+You may want to create a shared volume to use your workspace inside the container. To do this create a new volume in the command like this `-v /path/to/your/workspace:/workspace` (have it before `-it`). That way, your workspace becomes accessible inside the container from the path `/workspace`. 
