@@ -19,3 +19,4 @@ Might be a bit slow, but good to be able to use it on M1 Macs as well :)
 
 
 *WARNING! You may get some weird errors when images are pulled or similar. It seem to work anyway. Probably just Podman running inside Docker, telling you that it is pulling the image or something*
+*Curious n Ansible Bender and want to see some examples? Check out my [blog entry about it](https://themkat.net/2022/03/17/creating_container_images_with_ansible.html)*
