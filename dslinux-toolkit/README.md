@@ -1,5 +1,5 @@
-# DSLinux toolchain -- mostly compiles, some issues with libjpeg
-This Docker image includes the DSLinux source code and toolchain. This is useful if you for some reason want to build applications for DSLinux in 2022, or if you want to modify the source code. Developing for DSLinux is covered in their official documentation with the title [PortingHowTo](https://www.dslinux.org/wiki/PortingHowto.html). All steps in building the image are also done according to [the official docs](https://www.dslinux.org/wiki/CompilingDSLinux.html).
+# DSLinux toolchain
+This Docker image includes the DSLinux source code and toolchain. This is useful if you for some reason want to build applications for DSLinux in 2022, or if you want to modify the source code. Developing for DSLinux is covered in their official documentation with the title [PortingHowTo](https://www.dslinux.org/wiki/PortingHowto.html). All steps in building the image are also done according to [the official docs](https://www.dslinux.org/wiki/CompilingDSLinux.html). 
 
 
 Why a docker image? To simplify development. The older toolchain requires a 386 processor (i.e, a 32 bit one, at least a 32 bit OS). Having this inside an image seems to simplify development a bit (especially on modern systems like my M1 Macbook Air). The tooling seems to be a hazzle to work on modern platforms. I may just have been lazy and jumped to the Docker image solution after a few attempts :P 
@@ -16,11 +16,11 @@ If you want to compile software for DSLinux, you should first read the links abo
 
 
 - `make menuconfig` (you can just exit to save the defaults. DLDI build is sensible for most "modern" DS Flash Carts)
-- `make` (build the kernel and basic tooling. Takes a while)
+- `make` (build the kernel and basic tooling. Takes a bloody million years. See note below)
 - `make xsh` (to start the cross compilation shell)
 
 
-Might make an image with the build done later. Not too hard if you want to try yourself (check the bulk build script in the DSLinux SVN repo).
+**Note: To make it compile I had to disable build of Pixil (PDA gui) and tmsnc (text based MSN client). This can be done in menuconfig, Kernel/Library/Defaults Selection, then User/Vendor settings. Then exit the thing. Now you are back to the terminal for a short moment before a new ncurses menu shows up. Miscellenous applications for Pixil, and Network apps for tmsnc. Deselect with space, then exit and build. Don't worry, you can still build apps that don't depend on these. Have to investigate why these fail during linking...**
 
 
-**What can you do?** Even with the compilation failures, some programs you make will still compile. This will probably not include software depending on SDL, imagemagick and other software that relies on libjpeg. (or other later compiled modules). Working on fixing all of it :P 
+Might make an image with the build done later. Not too hard if you want to try yourself (check the bulk build script in the DSLinux SVN repo). Would be fun to be able to use it in Github Actions to produce to some binaries (yes, fun!!!! :D ). 

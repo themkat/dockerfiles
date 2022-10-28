@@ -4,7 +4,7 @@ WORKDIR /work/dslinux
 RUN apt-get update && \
     apt-get install -y subversion wget bzip2 gcc binutils make \
     libncurses-dev zlib1g-dev gettext libperl-dev texinfo \
-    flex bison gawk less file autoconf pkg-config && \
+    flex bison gawk less file autoconf automake1.4 pkg-config libtool && \
     apt-get clean && \
     useradd devguy && \
     wget http://dslinux.org/toolchain/dslinux-toolchain-2008-01-24-i686.tbz && \
