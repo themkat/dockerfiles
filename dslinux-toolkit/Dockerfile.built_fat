@@ -1,0 +1,7 @@
+FROM --platform=linux/386 themkat/dslinux
+
+ADD build-config /work/dslinux/.config
+ADD app-config   /work/dslinux/config/.config
+
+# build the entire thing. Takes a while
+RUN cd /work/dslinux && yes '' | make config && make
