@@ -2,7 +2,7 @@
 This Docker image includes the DSLinux source code and toolchain. This is useful if you for some reason want to build applications for DSLinux in 2022, or if you want to modify the source code. Developing for DSLinux is covered in their official documentation with the title [PortingHowTo](https://www.dslinux.org/wiki/PortingHowto.html). All steps in building the image are also done according to [the official docs](https://www.dslinux.org/wiki/CompilingDSLinux.html). 
 
 
-Why a docker image? To simplify development. The older toolchain requires a 386 processor (i.e, a 32 bit one, at least a 32 bit OS). Having this inside an image seems to simplify development a bit (especially on modern systems like my M1 Macbook Air). The tooling seems to be a hazzle to work on modern platforms. I may just have been lazy and jumped to the Docker image solution after a few attempts :P 
+Why a docker image? To simplify development. The older toolchain requires a 32bit x86 processor (or at least a 32 bit OS). Having this inside an image seems to simplify development a bit (especially on modern systems like my M1 Macbook Air). The tooling seems to be a hazzle to work on modern platforms. I may just have been lazy and jumped to the Docker image solution after a few attempts :P 
 
 
 Also it might help other people who want to compile ancient software :) [debian/eol](https://hub.docker.com/r/debian/eol) is a great base image for cases like these.
