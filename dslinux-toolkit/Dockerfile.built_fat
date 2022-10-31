@@ -1,7 +1,10 @@
 FROM --platform=linux/386 themkat/dslinux
 
 ADD build-config /work/dslinux/.config
+RUN cd /work/dslinux && yes '' | make config
+
+# .config in this dir is overriden on make config
 ADD app-config   /work/dslinux/config/.config
 
 # build the entire thing. Takes a while
-RUN cd /work/dslinux && yes '' | make config && make
+RUN make
