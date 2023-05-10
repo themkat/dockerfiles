@@ -8,7 +8,7 @@ FROM amigadev/crosstools:m68k-amigaos
 RUN wget http://aminet.net/util/libs/AmiSSL-5.8-SDK.lha && \
     lha x AmiSSL-5.8-SDK.lha && \
     cp -R AmiSSL/Developer/include /opt/m68k-amigaos/. && \
-    cp AmiSSL/Developer/lib/AmigaOS3/libamisslauto.a /opt/m68k-amigaos/lib/. && \
+    cp AmiSSL/Developer/lib/AmigaOS3/*.a /opt/m68k-amigaos/lib/. && \
     rm AmiSSL-5.8-SDK.lha && \
     wget http://aminet.net/comm/tcp/curl-7.74.0.lha && \
     lha x curl-7.74.0.lha && \
